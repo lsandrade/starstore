@@ -1,7 +1,13 @@
 angular.module("starstore")
 
-.controller("HelloWorldCtrl",function($scope){
-	$scope.message = "Hello";
+.controller("HomeCtrl",function($scope){
+	$scope.message = "Home";
+})
+
+.controller("NovoPedidoCtrl",function($scope){
+})
+
+.controller("PedidosCtrl",function($scope){
 })
 
 ;
