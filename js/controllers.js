@@ -4,7 +4,8 @@ angular.module("starstore")
 	$scope.message = "Home";
 })
 
-.controller("NovoPedidoCtrl",function($scope){
+.controller("NovoPedidoCtrl",function($scope, Produtos){
+	$scope.produtos = Produtos.all();
 })
 
 .controller("PedidosCtrl",function($scope){

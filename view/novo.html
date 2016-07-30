@@ -1,1 +1,41 @@
-Novo pedido
+<h2>Novo pedido</h2>
+
+<form action="" method="POST" class="form">
+	<div class="row"  style="margin-bottom:20px;">
+		<h4>Escolha os produtos</h4>
+		<hr>
+
+		<div class="col-lg-4" ng-repeat="produto in produtos">
+			<h3>{{produto.descricao}}</h3>
+			<p>{{"Z$" + produto.valor + ".00"}}</p>
+			<img src="img/{{produto.img}}" alt="{{produto.img}}" width="100%">
+			<div class="form-check">
+				<label class="form-check-label">
+					<input type="checkbox" name="produtos" value="{{produto.codigo}}" class="form-check-input" >
+					Escolher
+				</label>
+			</div>
+			<input type="number" name="quantidade" placeholder="quantidade" class="form-control">
+		</div>
+	</div>
+	<div class="row">
+		<h4>Preencha seus dados</h4>
+		<hr>
+		<label>
+			Nome
+			<input type="text" class="form-control" size="30" placeholder="Ex: João da Silva">
+		</label>
+		<label>
+			CPF
+			<input type="text" class="form-control" size="30" placeholder="Ex: 1234567890">
+		</label>
+		<label>
+			Telefone
+			<input type="text" class="form-control" size="30" placeholder="Ex: 33333333">
+		</label>
+		<label>
+			E-mail
+			<input type="email" class="form-control" size="30" placeholder="Ex: eu@email.com">
+		</label>
+	</div>
+</form>
