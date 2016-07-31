@@ -70,12 +70,7 @@ angular.module("starstore")
 	});
 
 	$scope.delete = function (numero){
-		$http({
-			method: 'DELETE',
-			url : 'http://localhost:8080/contabilizei/rest/pedidos/'+numero,
-			data: "",
-			headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-		});
+		$http.delete('http://localhost:8080/contabilizei/rest/pedidos/'+numero);
 
 	};
 })
