@@ -3,8 +3,8 @@ angular.module("starstore",['ngRoute'])
 
 .config(function($routeProvider, $locationProvider)
 {
-   
-   $routeProvider
+
+	$routeProvider
 
    // para a rota '/', view 'home.html'
    .when('/', {
@@ -26,6 +26,16 @@ angular.module("starstore",['ngRoute'])
    .when('/pedidos', {
    	templateUrl : 'view/pedidos.html',
    	controller     : 'PedidosCtrl',
+   })
+
+   .when('/show/:numero', {
+   	templateUrl : 'view/show.html',
+   	controller     : 'ShowCtrl',
+   })
+
+   .when('/edit/:numero', {
+   	templateUrl : 'view/edit.html',
+   	controller     : 'EditCtrl',
    })
 
 

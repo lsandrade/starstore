@@ -60,8 +60,7 @@ angular.module("starstore")
 
 	$http({
 		method: 'GET',
-		url: 'http://localhost:8080/contabilizei/rest/pedidos/',
-		cache: false
+		url: 'http://localhost:8080/contabilizei/rest/pedidos/'
 	})
 	.then(function(result){
 		console.log(result.data);
@@ -70,5 +69,25 @@ angular.module("starstore")
 		alert('Ocorreu um erro. tente novamente');
 	});
 })
+
+
+.controller("ShowCtrl",function($scope, $http, $routeParams){
+	 $scope.numero = $routeParams.numero;
+	 $http({
+		method: 'GET',
+		url: 'http://localhost:8080/contabilizei/rest/pedidos/'+$scope.numero
+	})
+	.then(function(result){
+		console.log(result.data);
+		$scope.pedido = result.data;
+	}, function error(response){
+		alert('Ocorreu um erro. tente novamente');
+	});
+})
+
+.controller("EditCtrl",function($scope, $http){
+
+})
+
 
 ;
