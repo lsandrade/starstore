@@ -23,10 +23,10 @@ angular.module("starstore")
 		for (q in quantidade){
 			var p = Produtos.get(q);
 			var produto = { codigo: p.codigo, 
-							descricao: p.descricao, 
-							quantidade: quantidade[q], 
-							valorUnitario: p.valor
-						};
+				descricao: p.descricao, 
+				quantidade: quantidade[q], 
+				valorUnitario: p.valor
+			};
 			produtos.push(produto);
 		}
 		return produtos;
@@ -40,10 +40,10 @@ angular.module("starstore")
 		var valorTotal = $scope.getValorTotal(produtos);
 		
 		var pedidos = { cliente: pedido.cliente,
-						produtos: produtos,
-						valorTotal: valorTotal,
-						dataDeEmissao: new Date()
-					};
+			produtos: produtos,
+			valorTotal: valorTotal,
+			dataDeEmissao: new Date()
+		};
 
 		$http({
 			method: 'POST',
@@ -56,7 +56,19 @@ angular.module("starstore")
 	};
 })
 
-.controller("PedidosCtrl",function($scope){
+.controller("PedidosCtrl",function($scope, $http){
+
+	$http({
+		method: 'GET',
+		url: 'http://localhost:8080/contabilizei/rest/pedidos/',
+		cache: false
+	})
+	.then(function(result){
+		console.log(result.data);
+		$scope.pedidos = result.data;
+	}, function error(response){
+		alert('Ocorreu um erro. tente novamente');
+	});
 })
 
 ;
