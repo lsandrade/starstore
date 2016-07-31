@@ -5,25 +5,25 @@ angular.module("starstore")
   var produtos = [{
   	codigo: 'ABC',
   	descricao: 'Nave 1',
-  	valor: '10',
+  	valor: 10,
   	img: 'nave1.jpg'
   },
   {
   	codigo: 'DEF',
   	descricao: 'Nave 2',
-  	valor: '19',
+  	valor: 19,
   	img: 'nave2.jpg'
   },
   {
   	codigo: 'GHI',
   	descricao: 'Nave 3',
-  	valor: '30',
+  	valor: 30,
   	img: 'nave3.jpg'
   },
   {
   	codigo: 'JKL',
   	descricao: 'Nave 4',
-  	valor: '99',
+  	valor: 99,
   	img: 'nave4.jpg'
   },
   ];
@@ -32,9 +32,9 @@ angular.module("starstore")
   	all: function() {
   		return produtos;
   	},
-  	get: function(produtoId) {
-  		for (var i = 0; i < produto.length; i++) {
-  			if (produtos[i].id === parseInt(produtoId)) {
+  	get: function(produtoCod) {
+  		for (var i = 0; i < produtos.length; i++) {
+  			if (produtos[i].codigo === produtoCod) {
   				return produtos[i];
   			}
   		}

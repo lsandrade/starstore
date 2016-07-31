@@ -1,5 +1,6 @@
 angular.module("starstore",['ngRoute'])
 
+
 .config(function($routeProvider, $locationProvider)
 {
    
